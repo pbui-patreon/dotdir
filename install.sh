@@ -18,7 +18,7 @@ cd ~/.vim
 # enable cloning with github personal access token.
 #
 # i.e., git@github.com:junegunn/goyo.vim.git -> https://github.com/junegunn/goyo.vim.git
-sed --in-place --expression 's$git@github.com:\(.*\)$https://github.com/\1$g'
+sed --in-place --expression 's$git@github.com:\(.*\)$https://github.com/\1$g' .gitmodules
 git submodule sync
 git submodule update --init
 cd -
