@@ -13,7 +13,7 @@ echo "export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node-module
 
 # Aliases to move around the filesystem
 echo 'alias ppy="cd ~/patreon_py; source venv/bin/activate"' >> ~/.bashrc
-echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-error-codes patreon test"'
+echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-error-codes patreon test"' >> ~/.bashrc
 
 
 # Clone my vim setup
