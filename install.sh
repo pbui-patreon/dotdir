@@ -5,7 +5,7 @@ set -exo pipefail
 sudo apt-get update
 sudo apt-get install -y tmux vim silversearcher-ag
 
-gh repo clone junegunn/fzf.git ~/.fzf
+gh repo clone junegunn/fzf ~/.fzf
 ~/.fzf/install --all
 
 # Aliases to move around the filesystem
