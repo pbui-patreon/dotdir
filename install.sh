@@ -91,4 +91,4 @@ setw -g window-status-current-style fg=colour237,bg=colour203,bold
 #set-window-option -g window-status-current-bg colour8
 
 set -sg escape-time 0
-"EOF"
+EOF
