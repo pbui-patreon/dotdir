@@ -37,6 +37,12 @@ set -g default-terminal "xterm-256color"
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
 set -as terminal-overrides ',*:Setulc=\E[58::2:f
 
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+bind r source-file ~/.tmux.conf
+
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
