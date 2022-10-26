@@ -2,5 +2,5 @@
 
 set -exo pipefail
 
-apt-get update
-apt-get install -y tmux fzf vim
+sudo apt-get update
+sudo apt-get install -y tmux fzf vim
