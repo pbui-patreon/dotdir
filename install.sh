@@ -3,10 +3,14 @@
 set -exo pipefail
 
 sudo apt-get update
-sudo apt-get install -y tmux fzf vim silversearcher-ag
+sudo apt-get install -y tmux vim silversearcher-ag
+
+gh repo clone junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # Aliases to move around the filesystem
 echo 'alias ppy="cd ~/patreon_py; source venv/bin/activate"' >> ~/.bashrc
+echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-error-codes patreon test"'
 
 # Add fzf bindings to shell
 echo 'source /usr/share/doc/fzf/examples/key-bindings.bash' >> ~/.bashrc
@@ -92,3 +96,10 @@ setw -g window-status-current-style fg=colour237,bg=colour203,bold
 
 set -sg escape-time 0
 EOF
+
+# patreon_py conf
+if [[ -d patreon_py ]]; then
+    cd patreon_py
+    ./venv/bin/pip install 'python-lsp-server[all]'
+    cd -
+fi
