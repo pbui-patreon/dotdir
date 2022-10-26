@@ -8,9 +8,13 @@ sudo apt-get install -y tmux vim silversearcher-ag
 gh repo clone junegunn/fzf ~/.fzf
 ~/.fzf/install --all
 
+# fzf integration with silversearcher find files
+echo "export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node-modules -g .'" >> ~/.bashrc
+
 # Aliases to move around the filesystem
 echo 'alias ppy="cd ~/patreon_py; source venv/bin/activate"' >> ~/.bashrc
 echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-error-codes patreon test"'
+
 
 # Clone my vim setup
 gh repo clone paydro/vim-config ~/.vim
@@ -31,13 +35,7 @@ cd -
 cat >~/.tmux.conf << "EOF"
 set -g default-terminal "xterm-256color"
 set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
-set -as terminal-overrides ',*:Setulc=\E[58::2::%p1%{65536}%/%d::%p1%{256}%/%{255}%&%d::%p1%{255}%&%d%;m'  # underscore colours - needs tmux-3.0
-
-unbind C-b
-set -g prefix C-Space
-bind C-Space send-prefix
-
-bind r source-file ~/.tmux.conf
+set -as terminal-overrides ',*:Setulc=\E[58::2:f
 
 bind h select-pane -L
 bind j select-pane -D
@@ -95,8 +93,8 @@ set -sg escape-time 0
 EOF
 
 # patreon_py conf
-if [[ -d patreon_py ]]; then
-    cd patreon_py
+if [[ -d "/home/dev/patreon_py" ]]; then
+    cd ~/patreon_py
     ./venv/bin/pip install 'python-lsp-server[all]'
     cd -
 fi
