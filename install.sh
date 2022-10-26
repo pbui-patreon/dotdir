@@ -9,7 +9,7 @@ sudo apt-get install -y tmux fzf vim silversearcher-ag
 echo 'source /usr/share/doc/fzf/examples/key-bindings.bash' >> ~/.bashrc
 
 # Clone my vim setup
-gh clone paydro/vim-config ~/.vim
+gh repo clone paydro/vim-config ~/.vim
 cd ~/.vim
 git submodule update --init
 cd -
