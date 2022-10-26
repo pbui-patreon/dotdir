@@ -5,6 +5,9 @@ set -exo pipefail
 sudo apt-get update
 sudo apt-get install -y tmux fzf vim silversearcher-ag
 
+# Aliases to move around the filesystem
+echo 'alias ppy="cd ~/patreon_py; source venv/bin/activate"' >> ~/.bashrc
+
 # Add fzf bindings to shell
 echo 'source /usr/share/doc/fzf/examples/key-bindings.bash' >> ~/.bashrc
 
