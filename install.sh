@@ -32,10 +32,9 @@ git submodule update --init
 cd -
 
 # Tmux configuration
+# TODO: Move this into a file
 cat >~/.tmux.conf << "EOF"
 set -g default-terminal "xterm-256color"
-set -as terminal-overrides ',*:Smulx=\E[4::%p1%dm'  # undercurl support
-set -as terminal-overrides ',*:Setulc=\E[58::2:f
 
 unbind C-b
 set -g prefix C-Space
