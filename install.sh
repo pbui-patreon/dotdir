@@ -33,7 +33,7 @@ if [[ ! -e "~/.vim" ]]; then
   # enable cloning with github personal access token.
   #
   # i.e., git@github.com:junegunn/goyo.vim.git -> https://github.com/junegunn/goyo.vim.git
-  sed --in-place --expression 's$git@github.com:\(.*\)$https://github.com/\1$g' .gitmodules
+  # sed --in-place --expression 's$git@github.com:\(.*\)$https://github.com/\1$g' .gitmodules
   git submodule sync
   git submodule update --init
   cd -
@@ -50,17 +50,4 @@ if [[ -d "/home/dev/patreon_py" ]]; then
     cd ~/patreon_py
     ./venv/bin/pip install 'python-lsp-server[all]'
     cd -
-fi
-
-# clone other useful repos
-if [[ ! -e "~/patreon_react_features" ]]; then
-  git repo clone patreon/patreon_react_features
-fi
-
-if [[ ! -e "~/terraform" ]]; then
-  git repo clone patreon/terraform
-fi
-
-if [[ ! -e "~/ansible" ]]; then
-  git repo clone patreon/ansible
 fi
