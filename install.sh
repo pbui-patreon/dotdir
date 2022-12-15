@@ -8,7 +8,7 @@ sudo unminimize
 sudo apt-get update
 sudo apt-get install -y man-db tmux vim silversearcher-ag
 
-if [[ ! -e "~/.fzf/bin/fzf" ]]; then
+if [[ ! -e "${HOME}/.fzf/bin/fzf" ]]; then
   gh repo clone junegunn/fzf ~/.fzf
   ~/.fzf/install --all
 fi
@@ -23,7 +23,7 @@ echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-er
 
 # Clone my vim setup
 
-if [[ ! -e "~/.vim" ]]; then
+if [[ ! -d "${HOME}/.vim" ]]; then
   gh repo clone paydro/vim-config ~/.vim
   cd ~/.vim
 
