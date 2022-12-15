@@ -4,7 +4,6 @@ set -exo pipefail
 
 BASEDIR="$( cd "$( dirname "$0" )" && pwd )"
 
-sudo unminimize
 sudo apt-get update
 sudo apt-get install -y man-db tmux vim silversearcher-ag
 
