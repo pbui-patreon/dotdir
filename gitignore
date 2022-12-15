@@ -1,0 +1,11 @@
+.DS_Store
+*.swp
+*.swo
+*.swn
+*.swm
+*.swq
+*.swr
+*.sws
+
+.byebug_history
+tags

@@ -1,0 +1,44 @@
+[user]
+	name = pbui-patreon
+  email = pbui@patreon.com
+	team = @Patreon/be-core
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[alias]
+  st = status
+  br = branch
+  co = checkout
+  bra = branch -a
+  logs = log --stat
+  pr = pull --rebase --prune
+  ci = commit -v
+
+[fetch]
+  prune = true
+
+[branch]
+  autosetupmerge = true
+
+[push]
+  default = tracking
+
+[pull]
+  edit = false
+
+[core]
+  autocrlf = input
+  quotepath = false
+  excludesfile = /Users/pbui/.gitignore
+  safecrlf = true
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[safe]
+	directory = /opt/ansible
