@@ -1,3 +1,5 @@
+source ~/.bashrc
+
 alias ppy="cd ~/patreon_py"
 alias prf="cd ~/patreon_react_features"
 alias ppy="work && cd patreon_py && source venv/bin/activate"

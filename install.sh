@@ -12,14 +12,6 @@ if [[ ! -e "${HOME}/.fzf/bin/fzf" ]]; then
   ~/.fzf/install --all
 fi
 
-# fzf integration with silversearcher find files
-echo "export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git --ignore node-modules -g .'" >> ~/.bashrc
-
-# Aliases to move around the filesystem
-echo 'alias ppy="cd ~/patreon_py; source venv/bin/activate"' >> ~/.bashrc
-echo 'alias start_mypy="dmypy kill; dmypy run -- --show-column-numbers --show-error-codes patreon test"' >> ~/.bashrc
-
-
 # Clone my vim setup
 
 if [[ ! -d "${HOME}/.vim" ]]; then
