@@ -5,7 +5,7 @@ set -exo pipefail
 BASEDIR="$( cd "$( dirname "$0" )" && pwd )"
 
 sudo apt-get update
-sudo apt-get install -y man-db tmux vim silversearcher-ag
+sudo apt-get install -y man-db tmux vim silversearcher-ag dns-utils
 
 if [[ ! -e "${HOME}/.fzf/bin/fzf" ]]; then
   gh repo clone junegunn/fzf ~/.fzf
