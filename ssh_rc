@@ -1,0 +1,13 @@
+# When SSHing to rdev, it forwards the developer's SSH keys (-A option) which
+# creates a new SSH_AUTH_SOCK file each time. This breaks in tmux because
+# SSH_AUTH_SOCK is set to the inherited env vars when tmux was started.  Which
+# means when you disconnect and `rdev ssh` again, the SSH_AUTH_SOCK no longer
+# exists within tmux.  To get around that, the tmux.conf file sets the
+# SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock on startup.
+#
+# Then, when we SSH to rdev, this file executes which symlinks the socket to
+# the one tmux expects.  This should enable SSH with the forwarded identity to
+# work within the tmux even with SSH reconnects.
+if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ]; then
+    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+fi
