@@ -31,8 +31,6 @@ if [[ ! -d "${HOME}/.vim" ]]; then
 fi
 
 cp $BASEDIR/tmux.conf ~/.tmux.conf
-mkdir -p ~/.ssh
-cp $BASEDIR/ssh_rc ~/.ssh/rc
 cp $BASEDIR/gitconfig ~/.gitconfig
 cp $BASEDIR/gitignore ~/.gitignore
 cp $BASEDIR/profile ~/.profile
