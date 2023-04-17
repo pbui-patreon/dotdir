@@ -42,3 +42,12 @@
 	smudge = git-lfs smudge -- %f
 [safe]
 	directory = /opt/ansible
+
+[credential "https://github.com"]
+  helper =
+  helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper =
+  helper = !/usr/bin/gh auth git-credential
+[dev]
+  environment = rdev
