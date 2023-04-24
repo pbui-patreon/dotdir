@@ -16,3 +16,5 @@ refresh() {
     eval $(tmux show-env -s | grep SSH_AUTH)
   fi
 }
+
+source /opt/dotfiles/rdev-common/history.sh
